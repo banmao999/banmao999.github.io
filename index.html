@@ -148,6 +148,231 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/07/2-Html%E6%A0%87%E7%AD%BE3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="一个小小的学习屋">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/07/2-Html%E6%A0%87%E7%AD%BE3/" class="post-title-link" itemprop="url">2-Html标签3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-07 20:08:43" itemprop="dateCreated datePublished" datetime="2020-07-07T20:08:43+08:00">2020-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-06 23:35:39" itemprop="dateModified" datetime="2020-07-06T23:35:39+08:00">2020-07-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTMl基本标签"><a href="#HTMl基本标签" class="headerlink" title="HTMl基本标签"></a>HTMl基本标签</h1><h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>单元格内的文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        ……</span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>《table》《/table》是用于定义表格的标签</li>
+<li>《tr》《/tr》定义表格中的行，必须嵌套在table中</li>
+<li>《td》《/td》定义表格中的单元格，必须嵌套在tr中</li>
+</ol>
+<h3 id="表头单元格标签"><a href="#表头单元格标签" class="headerlink" title="表头单元格标签"></a>表头单元格标签</h3><p>《th》标签表示HTML表格的表头部分，<strong>文本内容加粗居中显示</strong></p>
+<h3 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h3><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>left、center、right</td>
+<td>规定表格相对周围元素的对齐方式</td>
+</tr>
+<tr>
+<td>border</td>
+<td>1或者“ ”</td>
+<td>表格单元是否拥有边框，默认为“”无边框</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>像素值</td>
+<td>单元边沿与其内容之间的空白，默认1px</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>像素值</td>
+<td>单元格之间的空白，默认2px</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素值或百分比</td>
+<td>表格的宽度</td>
+</tr>
+</tbody></table>
+<h3 id="表格结构标签"><a href="#表格结构标签" class="headerlink" title="表格结构标签"></a>表格结构标签</h3><p>表格可能很长，为了更好的表示表格的语义，将表格分为头部和主体</p>
+<p><strong>《thead》标签 == 表格的头部区域</strong></p>
+<p><strong>《tbody》标签 == 表格的主体区域</strong></p>
+<h3 id="合并单元格"><a href="#合并单元格" class="headerlink" title="合并单元格"></a>合并单元格</h3><h4 id="合并单元格方式"><a href="#合并单元格方式" class="headerlink" title="合并单元格方式"></a>合并单元格方式</h4><ol>
+<li>跨行合并：<strong>rowspan=’合并单元格的个数’</strong></li>
+<li>跨列合并：<strong>colspan=’合并单元格的个数’</strong></li>
+</ol>
+<h4 id="目标单元格"><a href="#目标单元格" class="headerlink" title="目标单元格"></a>目标单元格</h4><ul>
+<li>跨行：最上侧单元格为目标单元格</li>
+<li>跨列：最左侧单元格为目标单元格</li>
+</ul>
+<h4 id="合并步骤"><a href="#合并步骤" class="headerlink" title="合并步骤"></a>合并步骤</h4><ol>
+<li>先确定是跨行还是跨列</li>
+<li>找到目标单元格，写上合并方式=合并的单元格数量。</li>
+<li>删除多余的单元格</li>
+</ol>
+<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><p><strong>列表用来布局</strong>，列表的特点是整齐、整洁、有序</p>
+<p>列表分为三类：<strong>无序列表、有序列表、自定义列表</strong></p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>《ul》标签表示无序列表，一般会以项目符号呈现列表项，而列表项用《li》定义</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>无序列表各个列表项没有顺序级别，是并列的</li>
+<li>《ul》《/ul》中只能嵌套《li》《/li》，不能输入其他标签或者文字</li>
+<li>《li》《/li》相当于一个容器，里面可以存放所有元素</li>
+<li>无序列表带有自己的样式属性</li>
+</ol>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>《ol》标签定义有序列表，列表排序以数字显示，且使用《li》标签定义列表项</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><p>自定义列表常用于对术语或名词进行解释和描述，定义列表的列表项前没有任何项目符号</p>
+<p>《dl》标签定义描述列表，该标签会与《dt》（定义项目/名字）和《dd》（描述每个项目/名字）一起使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>名词1<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词1解释1<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词1解释2<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>表单的目的是为了<strong>收集用户信息</strong></p>
+<h3 id="表单的组成"><a href="#表单的组成" class="headerlink" title="表单的组成"></a>表单的组成</h3><p>在HTML中，一个完整的表单通常由<strong>表单域、表单控件（表单元素）和提示信息</strong>构成</p>
+<h3 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h3><p><strong>一个包含表单元素的区域</strong></p>
+<p>在HTML标签中，《from》标签用于定义表单域，以实现用户信息的收集和传递</p>
+<p><strong>《from》会把它范围内的表单元素信息提交给服务器</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">from</span> <span class="attr">action</span>=<span class="string">'URL地址'</span> <span class="attr">method</span>=<span class="string">'提交方式'</span> <span class="attr">name</span>=<span class="string">'表单域名称'</span>&gt;</span></span><br><span class="line">	各种表单控件</span><br><span class="line"><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>action</td>
+<td>URL地址</td>
+<td>指定接收并处理表单数据的服务器程序的URL地址</td>
+</tr>
+<tr>
+<td>method</td>
+<td>get/post</td>
+<td>设置表单数据的提交方式</td>
+</tr>
+<tr>
+<td>name</td>
+<td>名称</td>
+<td>指定表单的名称，<strong>以区分同一个页面中的多个表单域</strong></td>
+</tr>
+</tbody></table>
+<h3 id="表单控件（表单元素）"><a href="#表单控件（表单元素）" class="headerlink" title="表单控件（表单元素）"></a>表单控件（表单元素）</h3><h4 id="《input》表单元素"><a href="#《input》表单元素" class="headerlink" title="《input》表单元素"></a>《input》表单元素</h4><p><strong>用于收集用户信息</strong></p>
+<p>在《input》标签中，包含一个<strong>type</strong>属性，根据不同的<strong>type</strong>属性值，输入的字段拥有很多种形式（文本、复选框、单选按钮、按钮等）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'属性值'</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>button</td>
+<td>可点击按钮（多数情况下用于通过JavaScript启动脚本</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>复选框</td>
+</tr>
+<tr>
+<td>file</td>
+<td>输入字段和“浏览”按钮，供文件上传</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>隐藏的输入字段</td>
+</tr>
+<tr>
+<td>image</td>
+<td>图像形式的提交按钮</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码字段，字符被掩码</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>单选按钮</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>重置按钮，清除表单中的所有数据</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>提交按钮，把表单数据发送到服务器</td>
+</tr>
+<tr>
+<td>text</td>
+<td>单行的输入字段，可在其中输入文本，默认宽度20个字符</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/2-Html%E6%A0%87%E7%AD%BE2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -701,7 +926,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
