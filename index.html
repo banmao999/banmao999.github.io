@@ -179,7 +179,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/archives/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
@@ -188,22 +188,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            标签
+            归档
           </a>
         </li>
       
@@ -218,12 +208,32 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-sitemap">
           <a href="/sitemap#.xml%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
             
             站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -330,52 +340,7 @@
 
       
         
-          
-          HTMl基本标签表格标签基本语法1234567&lt;table&gt;    &lt;tr&gt;        &lt;td&gt;单元格内的文字&lt;/td&gt;        ……    &lt;/tr&gt;    ……&lt;/table&gt;
-
-
-《table》《/table》是用于定义表格的标签
-《tr》《/tr》定义表格中的行，必须嵌套在table中
-《td》《/td》定义表格中的单元格，必须嵌套在tr中
-
-表头单元格标签《th》标签表示HTML表格的表头部分，文本内容加粗居中显示
-表格属性
-
-
-属性名
-属性值
-描述
-
-
-
-align
-left、center、right
-规定表格相对周围元素的对齐方式
-
-
-border
-1或者“ ”
-表格单元是否拥有边框，默认为“”无边框
-
-
-cellpadding
-像素值
-单元边沿与其内容之间的空白，默认1px
-
-
-cellspacing
-像素值
-单元格之间的空白，默认2px
-
-
-width
-像素值或百分比
-表格的宽度
-
-
-表格结构标签表格可能很长，为了更好的表示表格的语义，将表格分为头部和主体
-《thead》标签 == 表格
-          ...
+          <h1 id="HTMl基本标签"><a href="#HTMl基本标签" class="headerlink" title="HTMl基本标签"></a>HTMl基本标签</h1><h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>单元格内的文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        ……</span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    ……</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/07/2-Html%E6%A0%87%E7%AD%BE3/#more" rel="contents">
@@ -499,84 +464,49 @@ width
 
       
         
-          
-          HTML常用标签图像标签和路径在HTML标签中，《img》标签用于定义HTML页面中的图像。单标签
-1&lt;img src='图像URL' /&gt;
+          <h1 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h1><h2 id="图像标签和路径"><a href="#图像标签和路径" class="headerlink" title="图像标签和路径"></a>图像标签和路径</h2><p>在HTML标签中，《img》标签用于定义HTML页面中的图像。<strong>单标签</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'图像URL'</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
-src是《img》标签的必须属性，用于指定图像文件的途径和文件名
-
-
-
-属性
-属性值
-说明
-
-
-
-src
-图片路径
-必须熟悉
-
-
-alt
-文本
-替换文本，图像不能显示时显示的文字
-
-
-title
-文本
-提示文本，鼠标放在图像上，显示的文字
-
-
-width
-像素
-设置图像的宽度
-
-
-height
-像素
-设置图像高度
-
-
-border
-像素
-设置图像的边框粗细
-
-
-注意：
-
-图像属性必须写在标签名后面
-属性不分先后顺序，属性之间空格分隔
-属性采取键值对格式，属性=“属性值”
-
-路径相对路径以引用文件所在位置为参考基础，建立的目录路径，即图片相对于HTML文件的位置
-
-
-
-相对路径分类
-符合
-说明
-
-
-
-同一级
-
-图像位于HTML文件同一级
-
-
-下一级
-/
-图像位于HTML文件下一级，《img src=’images/baidu,jpg’》
-
-
-上一级
-../
-图像位于HTML上一级
-
-
-绝对路径指目录下的绝对位置，通常从盘符开始的路径
-
-          ...
+<p><strong>src是《img》标签的必须属性，用于指定图像文件的途径和文件名</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>图片路径</td>
+<td>必须熟悉</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文本</td>
+<td>替换文本，图像不能显示时显示的文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td>文本</td>
+<td>提示文本，鼠标放在图像上，显示的文字</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素</td>
+<td>设置图像的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>像素</td>
+<td>设置图像高度</td>
+</tr>
+<tr>
+<td>border</td>
+<td>像素</td>
+<td>设置图像的边框粗细</td>
+</tr>
+</tbody></table>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/06/2-Html%E6%A0%87%E7%AD%BE2/#more" rel="contents">
@@ -700,38 +630,12 @@ border
 
       
         
-          
-          Web标准由W3C组织（万维网联盟）制定
-1、为什么需要标准​        浏览器不同，显示页面或者排版有差异
-​        更容易被搜寻引擎搜索
-​        降低网站流量费用
-​        使网站易于维护
-​        提高页面浏览速度
-2、Web标准的构成主要包括结构、表现、行为
-
-
-
-标准
-说明
-
-
-
-结构
-结构用于对网页元素进行整理和分类，主要学习HTML
-
-
-表现
-表现用于设置网页元素的版式、颜色、大小，主要指CSS
-
-
-行为
-行为指网页模型的定义以及交互的编写，主要学习JavaScript
-
-
-Web标准提出的最佳方案：结构、样式、行为相分离S
-结构写在HTML文件中，表现写在CSS文件中，行为写在JavaScript文件中
-
-          
+          <h1 id="Web标准"><a href="#Web标准" class="headerlink" title="Web标准"></a>Web标准</h1><p>由W3C组织（万维网联盟）制定</p>
+<h2 id="1、为什么需要标准"><a href="#1、为什么需要标准" class="headerlink" title="1、为什么需要标准"></a>1、为什么需要标准</h2><p>​        浏览器不同，显示页面或者排版有差异</p>
+<p>​        更容易被搜寻引擎搜索</p>
+<p>​        降低网站流量费用</p>
+<p>​        使网站易于维护</p>
+<p>​        提高页面浏览速度</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/06/1%20Web%E6%A0%87%E5%87%86/#more" rel="contents">
@@ -855,59 +759,41 @@ Web标准提出的最佳方案：结构、样式、行为相分离S
 
       
         
-          
-          HTML标签HTML语法规范
-HTML标签是由&lt;&gt;（尖括号）包围的关键词中
-大部分标签成对存在，eg. 
-有些特殊的单标签
-双标签可分为两类：包含关系和并列关系
-
-
-
-
-标签名
-定义
-说明
-
-
-
-
-HTML标签
-页面内最大的标签，根标签
-
-
-
-文档的头部
-在head标签中必须要设置的标签是title
-
-
-
-文档的标题
-让页面拥有属于自己的网页标题
-
-
-
-文档的主体
-元素包含文档的所有内容
-
-
-DOCTYPE、lang以及字符集的作用1、文档类型声明标签​        &lt;!DOCTYPE&gt;文档类型声明标签，作用是告诉浏览器使用哪种HTML版本来显示网页
-1&lt;!DOCTYPE html&gt;
-
-这句代码的意思：当前页面采用的是HTML5版本显示
-注意：
-
-《!DOCTYPE》声明位于文档中的第一行 
-《!DOCTYPE》不是一个HTML标签
-
-2、lang语言种类用来定义当前文档显示的语言
-
-en定义语言为英语
-zh-CN定义语言为中文
-
-简单来说，定义为en就是英文网页，定义为zh-CN就是中文网页
-其实对文档显示来说，定义为en的文档也可以显示中文，反
-          ...
+          <h1 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h1><h2 id="HTML语法规范"><a href="#HTML语法规范" class="headerlink" title="HTML语法规范"></a>HTML语法规范</h2><ol>
+<li>HTML标签是由&lt;&gt;（尖括号）包围的关键词中</li>
+<li>大部分标签成对存在，eg. <html></html></li>
+<li>有些特殊的单标签</li>
+<li>双标签可分为两类：<strong>包含关系和并列关系</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>定义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><html></html></td>
+<td>HTML标签</td>
+<td>页面内最大的标签，<strong>根标签</strong></td>
+</tr>
+<tr>
+<td><head></head></td>
+<td>文档的头部</td>
+<td>在head标签中必须要设置的标签是title</td>
+</tr>
+<tr>
+<td><title></title></td>
+<td>文档的标题</td>
+<td>让页面拥有属于自己的网页标题</td>
+</tr>
+<tr>
+<td><body></body></td>
+<td>文档的主体</td>
+<td>元素包含文档的所有内容</td>
+</tr>
+</tbody></table>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/06/2%20Html%E6%A0%87%E7%AD%BE/#more" rel="contents">
@@ -1054,16 +940,9 @@ zh-CN定义语言为中文
       
         
           
+            <hr>
+<h1 id="为什么归档打不开了！！"><a href="#为什么归档打不开了！！" class="headerlink" title="为什么归档打不开了！！"></a>为什么归档打不开了！！</h1>
           
-为什么归档打不开了！！
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/07/testtest/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1141,7 +1020,7 @@ zh-CN定义语言为中文
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
