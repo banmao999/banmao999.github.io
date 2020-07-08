@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSSCSS是层叠样式表（Cascading Style Sheets）的简称，也是一种标记语言 CSS主要用于设置HTML页面的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局和外观显示样式 CSS语法规范CSS规则由两个主要部分：选择器以及一条或多条声明 123456&lt;style&gt;    p (选择器)&amp;#123;        color:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3-CSS1">
+<meta property="og:url" content="http://yoursite.com/2020/07/08/3-CSS1/index.html">
+<meta property="og:site_name" content="半猫的小站">
+<meta property="og:description" content="CSSCSS是层叠样式表（Cascading Style Sheets）的简称，也是一种标记语言 CSS主要用于设置HTML页面的文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局和外观显示样式 CSS语法规范CSS规则由两个主要部分：选择器以及一条或多条声明 123456&lt;style&gt;    p (选择器)&amp;#123;        color:">
+<meta property="article:published_time" content="2020-07-08T02:37:18.982Z">
+<meta property="article:modified_time" content="2020-07-08T02:39:38.409Z">
+<meta property="article:author" content="半猫">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/08/3-CSS1/"/>
+
+
+
+
+
+  <title>3-CSS1 | 半猫的小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">半猫的小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">呜啦啦啦啦啦啦啊</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap#.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/3-CSS1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">3-CSS1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-08T10:37:18+08:00">
+                2020-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><p><strong>CSS是层叠样式表（Cascading Style Sheets）的简称，也是一种标记语言</strong></p>
+<p>CSS主要用于设置HTML页面的<strong>文本内容（字体、大小、对齐方式等）、图片的外形（宽高、边框样式、边距等）以及版面的布局和外观显示样式</strong></p>
+<h2 id="CSS语法规范"><a href="#CSS语法规范" class="headerlink" title="CSS语法规范"></a>CSS语法规范</h2><p>CSS规则由两个主要部分：选择器以及一条或多条声明</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    p (选择器)&#123;</span><br><span class="line">        color: red;(声明)</span><br><span class="line">        font-size: 25px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<ul>
+<li>选择器是用于指定CSS样式的HTML标签，花括号内是对该对象设置的具体样式</li>
+<li>声明中的属性和属性值以键值对的形式出现</li>
+<li>属性是对指定对象设置的样式属性，如字体大小、文本颜色</li>
+<li>属性和属性值之间用英文“:”分开</li>
+<li>多个键值对之间用英文“;”分开</li>
+</ul>
+<h2 id="CSS代码风格"><a href="#CSS代码风格" class="headerlink" title="CSS代码风格"></a>CSS代码风格</h2><p>空格规范</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    p (选择器)&#123;</span><br><span class="line">        color: red;(声明)</span><br><span class="line">        font-size: 25px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>属性值前面，冒号后面，保留一个空格</li>
+<li>选择器和大括号中间保留空格</li>
+</ol>
+<h2 id="选择器分类"><a href="#选择器分类" class="headerlink" title="选择器分类"></a>选择器分类</h2><p><strong>选择器</strong>分为<strong>基础选择器</strong>和<strong>复合选择器</strong>两类</p>
+<h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><ul>
+<li>基础选择器由单个选择器组成</li>
+<li>其中包括：标签选择器、类选择器、id选择器、通配符选择器</li>
+</ul>
+<h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h4><p><strong>标签选择器（元素选择器）指用HTML标签名称</strong>作为选择器，按标签名称分类，为页面中某一类<strong>标签</strong>指定统一的CSS样式</p>
+<p><strong>作用</strong></p>
+<p>标签选择器可以把某一类标签全部选中，比如所有《div》和所有《span》</p>
+<p><strong>优点</strong></p>
+<p>能快速为页面中同一类型的标签统一设置样式</p>
+<p><strong>缺点</strong></p>
+<p>不能设计差异化样式，只能选择全部的当前标签</p>
+<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><p>如果想要差异化选择不同的标签，单独选一个或者几个标签，可以使用<strong>类选择器</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.类型&#123;</span><br><span class="line">	属性1: 属性值1;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>*<em>在类名前有一个“ . ” *</em></p>
+<p><strong>结构需要用calss属性来调用class类的意思</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'用户自定义类名'</span>&gt;</span></span><br><span class="line">    内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="类选择器-多类名"><a href="#类选择器-多类名" class="headerlink" title="类选择器-多类名"></a>类选择器-多类名</h4><p>给一个标签指定<strong>多个类名</strong>，从而达到更多的选择目的，这些类名都可以选出这个标签，即一个标签有多个名字</p>
+<h5 id="多类名使用方式"><a href="#多类名使用方式" class="headerlink" title="多类名使用方式"></a>多类名使用方式</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'red font20'</span>&gt;</span></span><br><span class="line">    亚瑟</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>在标签class属性中写多个类名</li>
+<li>多个类名中间用空格分开</li>
+</ol>
+<h5 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h5><ol>
+<li>可以把一些标签元素相同的样式（共同的部分）放在一个类里</li>
+<li>这些标签都可以调用这个公共的类，然后调用自己独有的类</li>
+<li>从而节省CSS代码，统一修改</li>
+</ol>
+<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><p>HTML元素以<strong>id属性</strong>来设置id选择器，CSS中id选择器以“#”来定义</p>
+<p><strong>id选择器和类选择器的区别:</strong></p>
+<ol>
+<li>类选择器（class）好比人的名字，一个人可以有多个名字，一个名字可以被多个人使用</li>
+<li>id选择器好比人的身份证号码，<strong>唯一使用，不能重复</strong></li>
+<li>id选择器和类选择器最大的不同在于使用次数</li>
+<li>类选择器在修改样式中用的最多，id选择器一般用于页面唯一性的元素上，常和JavaScript搭配使用</li>
+</ol>
+<h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h4><p>在CSS中，通配符选择器使用“*”定义，表示选取页面中的所有元素（标签）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	属性1: 属性值1;</span><br><span class="line">	……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通配符选择器不需要调用</li>
+<li>特殊情况才使用</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><table>
+<thead>
+<tr>
+<th>基础选择器</th>
+<th>作用</th>
+<th>特点</th>
+<th>使用情况</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>标签选择器</td>
+<td>可以选出所有相同的标签</td>
+<td>不能差异化选择</td>
+<td>较多</td>
+<td>p{color: red;}</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>可以选出1个或多个标签</td>
+<td>可以根据需求选择</td>
+<td>非常多</td>
+<td>.nav{color: red;}</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>一次只能选择1个标签</td>
+<td>ID属性只能在每个HTML文档中出现一次</td>
+<td>一般和JS搭配</td>
+<td>#nav{color: red;}</td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>选择所有标签</td>
+<td>选择的太多，有部分不需要</td>
+<td>特殊情况使用</td>
+<td>*{color: red;}</td>
+</tr>
+</tbody></table>
+<h2 id="CSS字体属性"><a href="#CSS字体属性" class="headerlink" title="CSS字体属性"></a>CSS字体属性</h2><p>CSS Fonts属性用于定义字体系列、大小、粗细和文字样式</p>
+<h3 id="字体系列"><a href="#字体系列" class="headerlink" title="字体系列"></a>字体系列</h3><p>CSS使用<strong>font-family</strong>属性定义文本的字体系列</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	font-family: "Microsoft YaHei", tahoma, arial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>各个字体之间必须使用英文状态下的逗号隔开</li>
+<li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
+<li>尽量使用系统默认自带字体</li>
+<li>当定义多个字体时，浏览器依次读取，并取第一个系统带有的字体</li>
+</ul>
+<h3 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h3><p>CSS使用<strong>font-size</strong>属性定义字体大小</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	font-size: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>px(像素)大小是网页常用单位</li>
+<li>谷歌浏览器默认字体大小为16px</li>
+<li>不同浏览器默认显示字体大小可能不同，尽量给一个明确的值</li>
+<li>可以给body指定整个页面内容的字体大小</li>
+<li><strong>标题标签（h1-h6）需要单独指定文字大小</strong></li>
+</ul>
+<h3 id="字体粗细"><a href="#字体粗细" class="headerlink" title="字体粗细"></a>字体粗细</h3><p>CSS使用<strong>font-weight</strong>属性设置文字粗细</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	font-weight: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>默认值（不加粗）</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>定义粗体</td>
+</tr>
+<tr>
+<td>100-900</td>
+<td>400等同于normal，700等同于bold，<strong>注意数字后面不跟单位</strong></td>
+</tr>
+</tbody></table>
+<h3 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h3><p>CSS使用<strong>font-style</strong>属性设置文本的风格</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	font-style: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>默认值。显示标准字体样式</td>
+</tr>
+<tr>
+<td>italic</td>
+<td>显示斜体样式</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<p>平时很少给字体加斜体，反而要给斜体标签（em，i）改为不倾斜</p>
+<h3 id="字体复合属性"><a href="#字体复合属性" class="headerlink" title="字体复合属性"></a>字体复合属性</h3><p>字体属性可以把以上文字样式综合起来，节约代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">	font: font-style  font-weight  font-size/line-height  font-family;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">	font: italic 700 16px 'Microsoft YaHei';</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：</p>
+<ul>
+<li>使用font属性时，必须按照以上语法格式中的顺序书写，<strong>不能更换顺序，并且各个属性间以空格隔开</strong></li>
+<li>不需要设置的属性可以省略，但<strong>必须保留font-size和font-family属性</strong>，否则font属性将不起作用</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>font-size</td>
+<td>字号</td>
+<td>通常用的单位是px像素，一定要跟上单位</td>
+</tr>
+<tr>
+<td>font-family</td>
+<td>字体</td>
+<td>按照团队约定来写字体</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>粗细</td>
+<td>加粗是700或者bold<br>不加粗是400或者normal<br>数字不跟单位</td>
+</tr>
+<tr>
+<td>font-style</td>
+<td>样式</td>
+<td>倾斜是italic，不倾斜是normal</td>
+</tr>
+<tr>
+<td>font</td>
+<td>复合</td>
+<td>1.有顺序，不能更改顺序<br> 2.其中字号和字体必须同时出现</td>
+</tr>
+</tbody></table>
+<h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><p>CSS Text（文本）属性可定义文本的外观（颜色、对齐、装饰、缩进、行间距）</p>
+<h3 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h3><p><strong>color</strong>属性定义文本的颜色</p>
+<table>
+<thead>
+<tr>
+<th>表示</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>预定义的颜色值</td>
+<td>red, green, blue, pink</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>#FF0000, #FF6600, #29D794</td>
+</tr>
+<tr>
+<td>RGB代码</td>
+<td>rgb(255,0,0)或者rgb(100%,0%,0%)</td>
+</tr>
+</tbody></table>
+<p><strong>常用十六进制</strong></p>
+<h3 id="对齐文本"><a href="#对齐文本" class="headerlink" title="对齐文本"></a>对齐文本</h3><p><strong>text-align</strong>属性设置元素内文本内容的水平对齐方式</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>left</td>
+<td>左对齐（默认）</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右对齐</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐</td>
+</tr>
+</tbody></table>
+<h3 id="装饰文本"><a href="#装饰文本" class="headerlink" title="装饰文本"></a>装饰文本</h3><p><strong>text-decoration</strong>属性规定添加到文本的装饰，可以给文本添加下划线、删除线、上划线</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>默认，无装饰线</td>
+</tr>
+<tr>
+<td>underline</td>
+<td>下划线，链接a自带下划线</td>
+</tr>
+<tr>
+<td>overline</td>
+<td>上划线</td>
+</tr>
+<tr>
+<td>line-through</td>
+<td>删除线</td>
+</tr>
+</tbody></table>
+<p><strong>可在链接a的属性中用none删除下划线</strong></p>
+<h3 id="文本缩进"><a href="#文本缩进" class="headerlink" title="文本缩进"></a>文本缩进</h3><p><strong>text-indent</strong>属性用来指定文本的第一行的缩进，通常将<strong>段落的首行缩进</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	text-indent: 2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>em是一个相对单位，就说当前元素（font-size）1个文字大小</strong>，如果当前元素没有设置大小，则会按照父元素的1个文字大小</p>
+<h3 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h3><p><strong>line-height</strong>属性设置行间的距离</p>
+<p>行间距=上间距+文本高度+下间距</p>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>表示</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>颜色</td>
+<td>通常用十六进制</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>对齐</td>
+<td>设定文字水平的对齐方式</td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td>缩进</td>
+<td>通常用于段落首行缩进2个字的距离，2em</td>
+</tr>
+<tr>
+<td>text-decoration</td>
+<td>装饰</td>
+<td>下划线 underline            取消下划线 none</td>
+</tr>
+<tr>
+<td>line-height</td>
+<td>行高</td>
+<td>控制行与行之间的距离</td>
+</tr>
+</tbody></table>
+<h2 id="CSS的引用方式"><a href="#CSS的引用方式" class="headerlink" title="CSS的引用方式"></a>CSS的引用方式</h2><h3 id="内部样式表（内嵌式）"><a href="#内部样式表（内嵌式）" class="headerlink" title="内部样式表（内嵌式）"></a>内部样式表（内嵌式）</h3><p>写到HTML页面内部，将所有CSS代码抽取出来，单独放到一个<strong>《style》</strong>标签中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div&#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br><span class="line">	……</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>《style》标签理论上可以放在HTML文档的任何地方，但一般会放在文档的《head》标签中</li>
+<li>控制当前HTML页面的样式</li>
+</ul>
+<h3 id="行内样式表（内联式）"><a href="#行内样式表（内联式）" class="headerlink" title="行内样式表（内联式）"></a>行内样式表（内联式）</h3><p>是在<strong>元素标签内部的sytle属性中设定CSS样式</strong>，适合修改简单样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">sytle</span>=<span class="string">'color: red; font-size: 20px;'</span>&gt;</span></span><br><span class="line">    内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>style其实就说标签的属性</li>
+<li>在引号中间，写法要符合CSS规范</li>
+<li>可以控制当前标签样式</li>
+</ul>
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>样式单独写到CSS文件中，之后把CSS文件引入到HTML页面</p>
+<p>引入外部样式表分为两步：</p>
+<ol>
+<li>新建一个后缀名为 .css的样式文件，把所有CSS代码放入此文件中</li>
+<li>在HTML页面中，使用《link》标签引入这个文件</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">'stylesheet'</span> <span class="attr">href</span>=<span class="string">'css文件路径'</span></span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rel</td>
+<td>定义当前文档与被链接文档之间的关系，在这里需要指定为“stylesheet”，表示被链接的文档是一个样式表文件</td>
+</tr>
+<tr>
+<td>href</td>
+<td>定义所链接外部样式表文件的URL，可以是相对路径也可以是绝对路径</td>
+</tr>
+</tbody></table>
+<h2 id="Chrome调试工具"><a href="#Chrome调试工具" class="headerlink" title="Chrome调试工具"></a>Chrome调试工具</h2><h3 id="打开调试工具"><a href="#打开调试工具" class="headerlink" title="打开调试工具"></a>打开调试工具</h3><p>打开Chrome浏览器，按下<strong>F12键</strong>或者<strong>右击页面空白处-&gt;检查</strong></p>
+<h3 id="使用调试工具"><a href="#使用调试工具" class="headerlink" title="使用调试工具"></a>使用调试工具</h3><ol>
+<li><strong>Ctrl+滚轮</strong>可以放大开发者工具代码大小</li>
+<li>左边是HTML元素结构，右边是CSS样式</li>
+<li>右边CSS样式可以改动数值和查看颜色</li>
+<li><strong>Ctrl+0</strong> 复原浏览器大小</li>
+<li>如果点击元素，发现右边没有样式引入，极有可能是类名或者样式引入错误</li>
+<li>如果有样式，但样式前面有黄色感叹号，则是样式属性书写错误</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/07/2-Html%E6%A0%87%E7%AD%BE3/" rel="next" title="2-Html标签3">
+                <i class="fa fa-chevron-left"></i> 2-Html标签3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">半猫</p>
+              <p class="site-description motion-element" itemprop="description">一个小小的学习屋</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS"><span class="nav-number">1.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS语法规范"><span class="nav-number">1.1.</span> <span class="nav-text">CSS语法规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS代码风格"><span class="nav-number">1.2.</span> <span class="nav-text">CSS代码风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器分类"><span class="nav-number">1.3.</span> <span class="nav-text">选择器分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础选择器"><span class="nav-number">1.3.1.</span> <span class="nav-text">基础选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签选择器"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">标签选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类选择器"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">类选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类选择器-多类名"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">类选择器-多类名</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#多类名使用方式"><span class="nav-number">1.3.1.3.1.</span> <span class="nav-text">多类名使用方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用场景"><span class="nav-number">1.3.1.3.2.</span> <span class="nav-text">使用场景</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id选择器"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">id选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通配符选择器"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">通配符选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.3.1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS字体属性"><span class="nav-number">1.4.</span> <span class="nav-text">CSS字体属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体系列"><span class="nav-number">1.4.1.</span> <span class="nav-text">字体系列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体大小"><span class="nav-number">1.4.2.</span> <span class="nav-text">字体大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体粗细"><span class="nav-number">1.4.3.</span> <span class="nav-text">字体粗细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字样式"><span class="nav-number">1.4.4.</span> <span class="nav-text">文字样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字体复合属性"><span class="nav-number">1.4.5.</span> <span class="nav-text">字体复合属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">1.4.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本属性"><span class="nav-number">1.5.</span> <span class="nav-text">文本属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本颜色"><span class="nav-number">1.5.1.</span> <span class="nav-text">文本颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对齐文本"><span class="nav-number">1.5.2.</span> <span class="nav-text">对齐文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰文本"><span class="nav-number">1.5.3.</span> <span class="nav-text">装饰文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本缩进"><span class="nav-number">1.5.4.</span> <span class="nav-text">文本缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行间距"><span class="nav-number">1.5.5.</span> <span class="nav-text">行间距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-2"><span class="nav-number">1.5.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS的引用方式"><span class="nav-number">1.6.</span> <span class="nav-text">CSS的引用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内部样式表（内嵌式）"><span class="nav-number">1.6.1.</span> <span class="nav-text">内部样式表（内嵌式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内样式表（内联式）"><span class="nav-number">1.6.2.</span> <span class="nav-text">行内样式表（内联式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部样式表"><span class="nav-number">1.6.3.</span> <span class="nav-text">外部样式表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome调试工具"><span class="nav-number">1.7.</span> <span class="nav-text">Chrome调试工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开调试工具"><span class="nav-number">1.7.1.</span> <span class="nav-text">打开调试工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用调试工具"><span class="nav-number">1.7.2.</span> <span class="nav-text">使用调试工具</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">©半猫的个人网站</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
