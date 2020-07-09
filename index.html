@@ -362,131 +362,15 @@
 
       
         
-          
-            <hr>
+          <hr>
 <h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><h2 id="盒子模型组成"><a href="#盒子模型组成" class="headerlink" title="盒子模型组成"></a>盒子模型组成</h2><p><strong>盒子模型</strong>：把HTML页面中的布局元素看作一个矩形的盒子，CSS盒子模型本质是一个盒子封装周围的HTML元素，包括：边框、外边距、内边距、实际内容</p>
-<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>属性值</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>border-width</td>
-<td></td>
-<td>定义边框粗细，单位是px</td>
-</tr>
-<tr>
-<td>border-style</td>
-<td>solid   实线边框<br>dashed  虚线边框<br>dotted  点线边框</td>
-<td>边框的样式</td>
-</tr>
-<tr>
-<td>border-color</td>
-<td></td>
-<td>边框颜色</td>
-</tr>
-</tbody></table>
-<h3 id="边框复合写法"><a href="#边框复合写法" class="headerlink" title="边框复合写法"></a>边框复合写法</h3><p>边框简写：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border: 1px solid red;   没有顺序</span><br></pre></td></tr></table></figure>
-
-<p>边框分开写法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-top: 1px solid red;   只设定上边框</span><br><span class="line">border-bottom: 3px dashed bule;   只设定下边框</span><br></pre></td></tr></table></figure>
-
-<h2 id="表格的细线边框"><a href="#表格的细线边框" class="headerlink" title="表格的细线边框"></a>表格的细线边框</h2><p><strong>border-collapse</strong>属性控制浏览器绘制表格边框的方式，控制相邻单元格的边框</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-collapse: collapse;</span><br></pre></td></tr></table></figure>
-
-<p><strong>表示相邻边框合并在一起</strong></p>
-<h2 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h2><p><strong>padding</strong>属性用于设置内边距，即边框与内容之间的距离</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>padding-left</td>
-<td>左内边距</td>
-</tr>
-<tr>
-<td>padding-right</td>
-<td>右内边距</td>
-</tr>
-<tr>
-<td>padding-top</td>
-<td>上内边距</td>
-</tr>
-<tr>
-<td>padding-bottom</td>
-<td>下内边距</td>
-</tr>
-</tbody></table>
-<h3 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h3><table>
-<thead>
-<tr>
-<th>值的个数</th>
-<th>表达意思</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>padding: 5px</td>
-<td>1个值，代表上下左右都有5px内边距</td>
-</tr>
-<tr>
-<td>padding: 5px 10px</td>
-<td>2个值，代表上下内边距5px，左右内边距10px</td>
-</tr>
-<tr>
-<td>padding: 5px 10px 20px</td>
-<td>3个值，代表上内边距5px，左右内边距10px，下内边距20px</td>
-</tr>
-<tr>
-<td>padding: 5px 10px 20px 30px</td>
-<td>4个值，上是5px<br>              右是10px<br>              下是20px<br>              左是30px<br>***  顺时针</td>
-</tr>
-</tbody></table>
-<h2 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h2><p><strong>margin</strong> 属性用于设置外边距，即控制盒子和盒子之间的距离</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>margin-left</td>
-<td>左外边距</td>
-</tr>
-<tr>
-<td>margin-right</td>
-<td>右外边距</td>
-</tr>
-<tr>
-<td>margin-top</td>
-<td>上外边距</td>
-</tr>
-<tr>
-<td>margin-bottom</td>
-<td>下外边距</td>
-</tr>
-</tbody></table>
-<p>简写方式与内边距一样</p>
-<h3 id="外边距典型应用"><a href="#外边距典型应用" class="headerlink" title="外边距典型应用"></a>外边距典型应用</h3><p>外边距可以让块级盒子<strong>水平居中</strong>，但是必须满足两个条件：</p>
-<ol>
-<li>盒子必须指定了宽度（width）</li>
-<li>盒子<strong>左右外边距</strong>都设置为auto</li>
-</ol>
-<p>常见写法：</p>
-<ul>
-<li>margin-left: auto;  margin-right: auto;</li>
-<li>margin: auto;             **上下左右auto</li>
-<li>margin: 0 auto;          **上下为0，左右auto</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/09/4-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
