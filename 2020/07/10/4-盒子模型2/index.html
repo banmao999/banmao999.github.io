@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT, 半猫, Java, 前端, 半猫的个人网站在这里" />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -79,15 +79,16 @@
 
 
 
-<meta name="description" content="这是一个正在学习前端和后端的菜鸟回忆录  我会将所有的笔记放在这里，估计只有我自己看吧~~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自我埋汰的简介">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="盒子模型圆角边框在CSS3中，新增了圆角边框样式，使盒子可以变成圆角 border-radius属性用于设置元素的外边框圆角 1border-radius: &quot;length&quot;;     ** 自定义倒圆角的半径">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4-盒子模型2">
+<meta property="og:url" content="http://yoursite.com/2020/07/10/4-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B2/index.html">
 <meta property="og:site_name" content="半猫的小站">
-<meta property="og:description" content="这是一个正在学习前端和后端的菜鸟回忆录  我会将所有的笔记放在这里，估计只有我自己看吧~~">
-<meta property="article:published_time" content="2019-04-07T09:07:37.000Z">
-<meta property="article:modified_time" content="2020-07-07T15:12:13.947Z">
+<meta property="og:description" content="盒子模型圆角边框在CSS3中，新增了圆角边框样式，使盒子可以变成圆角 border-radius属性用于设置元素的外边框圆角 1border-radius: &quot;length&quot;;     ** 自定义倒圆角的半径">
+<meta property="article:published_time" content="2020-07-10T10:51:06.988Z">
+<meta property="article:modified_time" content="2020-07-10T07:31:29.722Z">
 <meta property="article:author" content="半猫">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/10/4-盒子模型2/"/>
 
 
 
 
 
-  <title>自我埋汰的简介 | 半猫的小站</title>
+  <title>4-盒子模型2 | 半猫的小站</title>
   
 
 
@@ -259,38 +260,249 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/4-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">自我埋汰的简介</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <hr>
-<blockquote>
-<p><strong>这是一个正在学习前端和后端的菜鸟回忆录</strong></p>
-</blockquote>
-<p>我会将所有的笔记放在这里，估计只有我自己看吧~~</p>
-
+          <h1 class="post-title" itemprop="name headline">4-盒子模型2</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-10T18:51:06+08:00">
+                2020-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><h2 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h2><p>在CSS3中，新增了<strong>圆角边框</strong>样式，使盒子可以变成圆角</p>
+<p><strong>border-radius</strong>属性用于设置元素的外边框圆角</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: "length";     ** 自定义倒圆角的半径</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p><strong>radius半径原理</strong>：椭圆与边框的交集形成圆角效果</p>
+<ul>
+<li>参数值可以为<strong>数值</strong>或<strong>百分比</strong>的形式</li>
+<li>如果是正方形，想设置一个圆，把数值修改为高度或宽度的一半即可，或者直接写50%</li>
+<li>如果是个矩形，设置为高度的一半就可以做圆角矩形</li>
+<li>该属性是<strong>简写</strong>，可以写四个数值，分别代表<strong>左上角、右上角、右下角、左下角</strong></li>
+</ul>
+<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2><p>CSS3新增了盒子阴影，使用<strong>box-shadow</strong>属性为盒子添加阴影</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: h-shadow b-shadow blur spread color inset;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h-shadow</td>
+<td>必需，水平阴影的位置，允许负值</td>
+</tr>
+<tr>
+<td>v-shadow</td>
+<td>必需，垂直阴影的位置，允许负值</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>可选，模糊距离</td>
+</tr>
+<tr>
+<td>spread</td>
+<td>可选，阴影尺寸</td>
+</tr>
+<tr>
+<td>color</td>
+<td>可选，阴影颜色     常用半透明 rgba(0, 0, 0, .3)</td>
+</tr>
+<tr>
+<td>inset</td>
+<td>可选，将外部阴影（outset）改为内部阴影</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<ol>
+<li>默认的是外阴影（outset），但是不可以写这个单词，否则导致阴影无效</li>
+<li>盒子阴影不占空间，不影响其他盒子排序</li>
+</ol>
+<h2 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h2><p>CSS3中，可以使用<strong>text-shadow</strong>属性将阴影应用于文本</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: h-shadow v-shadow blur color;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h-shadow</td>
+<td>必需，水平阴影位置</td>
+</tr>
+<tr>
+<td>v-shadow</td>
+<td>必需，垂直阴影的位置</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>可选，模糊的距离</td>
+</tr>
+<tr>
+<td>color</td>
+<td>可选，阴影的颜色</td>
+</tr>
+</tbody></table>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/09/4-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B1/" rel="next" title="4-盒子模型1">
+                <i class="fa fa-chevron-left"></i> 4-盒子模型1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/10/5-%E6%B5%AE%E5%8A%A81/" rel="prev" title="5-浮动1">
+                5-浮动1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -323,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -384,6 +605,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#盒子模型"><span class="nav-number">1.</span> <span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#圆角边框"><span class="nav-number">1.1.</span> <span class="nav-text">圆角边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子阴影"><span class="nav-number">1.2.</span> <span class="nav-text">盒子阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字阴影"><span class="nav-number">1.3.</span> <span class="nav-text">文字阴影</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
