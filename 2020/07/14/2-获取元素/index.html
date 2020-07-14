@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="DOM," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="DOM——获取元素文档对象模型（DOM），是W3C组织推荐的处理可扩展标记语言的标准编程接口 可以改变网页内容、结果、样式 DOM树 文档：一个页面就是一个文档，DOM中使用document表示 元素：页面中的所有标签都是元素，DOM中使用element表示 节点：网页中所有内容都是节点（标签、属性、文本、注释等），DOM中使用node表示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2-DOM">
+<meta property="og:url" content="http://yoursite.com/2020/07/14/2-%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0/index.html">
+<meta property="og:site_name" content="半猫的小站">
+<meta property="og:description" content="DOM——获取元素文档对象模型（DOM），是W3C组织推荐的处理可扩展标记语言的标准编程接口 可以改变网页内容、结果、样式 DOM树 文档：一个页面就是一个文档，DOM中使用document表示 元素：页面中的所有标签都是元素，DOM中使用element表示 节点：网页中所有内容都是节点（标签、属性、文本、注释等），DOM中使用node表示">
+<meta property="article:published_time" content="2020-07-14T02:52:12.000Z">
+<meta property="article:modified_time" content="2020-07-14T07:43:10.790Z">
+<meta property="article:author" content="半猫">
+<meta property="article:tag" content="DOM">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/14/2-获取元素/"/>
+
+
+
+
+
+  <title>2-DOM | 半猫的小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">半猫的小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">呜啦啦啦啦啦啦啊</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap#.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/14/2-%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2-DOM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T10:52:12+08:00">
+                2020-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h1 id="DOM——获取元素"><a href="#DOM——获取元素" class="headerlink" title="DOM——获取元素"></a>DOM——获取元素</h1><p>文档对象模型（DOM），是W3C组织推荐的处理可扩展标记语言的标准<strong>编程接口</strong></p>
+<p>可以改变网页内容、结果、样式</p>
+<h2 id="DOM树"><a href="#DOM树" class="headerlink" title="DOM树"></a>DOM树</h2><ul>
+<li>文档：一个页面就是一个文档，DOM中使用document表示</li>
+<li>元素：页面中的所有标签都是元素，DOM中使用element表示</li>
+<li>节点：网页中所有内容都是节点（标签、属性、文本、注释等），DOM中使用node表示</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h2><h3 id="根据ID获取"><a href="#根据ID获取" class="headerlink" title="根据ID获取"></a>根据ID获取</h3><p>使用<strong>getElementById(id)方法</strong> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(‘id’);</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li>element是一个Element对象，如果当前文档中拥有特点ID的元素不存在，则返回null</li>
+<li>id是<strong>大小写敏感的字符串</strong>，代表了所要查找的元素的唯一ID</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>返回一个匹配到ID的DOM Element对象，若当前Document没有找到，则返回null</li>
+</ul>
+<hr>
+<h3 id="根据标签名获取"><a href="#根据标签名获取" class="headerlink" title="根据标签名获取"></a>根据标签名获取</h3><p>使用<strong>getElementsByTagName()方法</strong>返回带有指定标签名的<strong>对象的集合</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>返回的是 获取元素对象的集合 以伪数组的形式存储</p>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>因为得到的是一个对象的集合，所以想要操作里面的元素就需要遍历</li>
+<li>得到的元素是动态的</li>
+<li>如果页面中只有一个该标签名，返回的还是伪数组形式</li>
+<li>如果页面中没有这个元素，返回的是空的伪数组</li>
+</ol>
+<p>还可以获取某个元素（父元素）内部所有指定标签名的子元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">element.getElementsByTagName(<span class="string">'标签名'</span>);</span><br><span class="line">&lt;!-- 例子 --&gt;</span><br><span class="line"><span class="keyword">var</span> ol_list = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'ol'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(ol_list[<span class="number">0</span>].getElementsByTagName(<span class="string">'li'</span>));</span><br><span class="line">** 必须指明是哪个父元素 而不能是伪数组形式 **</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：父元素必须是<strong>单个元素（必须指明是哪个元素对象）</strong>，获取的时候不包括父元素子级</p>
+<h3 id="HTML5新增的方法"><a href="#HTML5新增的方法" class="headerlink" title="HTML5新增的方法"></a>HTML5新增的方法</h3><ol>
+<li><p>根据类名获取</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> boxs = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"类名"</span>);</span><br><span class="line">** 返回的是一个伪数组的集合 **</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>根据指定选择器获取一个对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstBox = <span class="built_in">document</span>.querySelector(<span class="string">"选择器"</span>);</span><br><span class="line">** 返回的是第一个元素对象 **</span><br><span class="line">** 切记 里面的选择器需要加符号  .box  #nav **</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> firstBox = <span class="built_in">document</span>.querySelector(<span class="string">"#nav"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>根据指定选择器获取所有对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> allBox = <span class="built_in">document</span>.querySelectorAll(<span class="string">"选择器"</span>);</span><br><span class="line">** 返回指定选择器的所有元素对象集合 伪数组 **</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="获取特定元素"><a href="#获取特定元素" class="headerlink" title="获取特定元素"></a>获取特定元素</h2><h3 id="获取body"><a href="#获取body" class="headerlink" title="获取body"></a>获取body</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bodyEle = <span class="built_in">document</span>.body;</span><br><span class="line"><span class="built_in">console</span>.log(bodyEle);</span><br><span class="line"><span class="built_in">console</span>.dir(bodyEle);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取HTML"><a href="#获取HTML" class="headerlink" title="获取HTML"></a>获取HTML</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hrmlEle = <span class="built_in">document</span>.documentElement;</span><br><span class="line"><span class="built_in">console</span>.log(htmlEle);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DOM/" rel="tag"># DOM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/14/1-Web-APIs/" rel="next" title="1-Web_APIs">
+                <i class="fa fa-chevron-left"></i> 1-Web_APIs
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/14/3-%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%A1%80/" rel="prev" title="3-事件基础">
+                3-事件基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">半猫</p>
+              <p class="site-description motion-element" itemprop="description">一个小小的学习屋</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM——获取元素"><span class="nav-number">1.</span> <span class="nav-text">DOM——获取元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM树"><span class="nav-number">1.1.</span> <span class="nav-text">DOM树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取元素"><span class="nav-number">1.2.</span> <span class="nav-text">获取元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#根据ID获取"><span class="nav-number">1.2.1.</span> <span class="nav-text">根据ID获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据标签名获取"><span class="nav-number">1.2.2.</span> <span class="nav-text">根据标签名获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5新增的方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">HTML5新增的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取特定元素"><span class="nav-number">1.3.</span> <span class="nav-text">获取特定元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取body"><span class="nav-number">1.3.1.</span> <span class="nav-text">获取body</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取HTML"><span class="nav-number">1.3.2.</span> <span class="nav-text">获取HTML</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">©半猫的个人网站</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
