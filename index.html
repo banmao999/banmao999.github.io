@@ -270,6 +270,331 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/16/4-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/16/4-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A02/" itemprop="url">4-操作元素2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T09:01:11+08:00">
+                2020-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h1 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h1><h2 id="排他思想"><a href="#排他思想" class="headerlink" title="排他思想"></a>排他思想</h2><p>如果有同一组元素，想要某一元素实现某种样式，需要用到循环的排他思想算法：</p>
+<ol>
+<li>所有元素全部清除样式</li>
+<li>给当前元素设置样式</li>
+<li>注意顺序不能颠倒（一般设置两层循环）</li>
+</ol>
+<h2 id="自定义属性的操作"><a href="#自定义属性的操作" class="headerlink" title="自定义属性的操作"></a>自定义属性的操作</h2><h3 id="获取属性值"><a href="#获取属性值" class="headerlink" title="获取属性值"></a>获取属性值</h3><ul>
+<li>element.属性  ===》  获取内置属性值（元素本身自带的属性）</li>
+<li>element.getAttribute(‘属性’)  ===》主要获得自定义的属性</li>
+</ul>
+<h3 id="设置属性值"><a href="#设置属性值" class="headerlink" title="设置属性值"></a>设置属性值</h3><ul>
+<li>element.属性 = ‘值’  ===》设置内置属性值</li>
+<li>element.setAttribute(‘属性’, ‘值’)  ===》主要针对自定义属性</li>
+</ul>
+<h3 id="更改属性"><a href="#更改属性" class="headerlink" title="更改属性"></a>更改属性</h3><ul>
+<li>div.className = ‘navs’  ===》将div的class类名改为navs</li>
+<li>div.setAttribute(‘class’, ‘footer’)  ===》将div的class类名改为footer</li>
+</ul>
+<p><strong>注意</strong>：两个的类名要求不同，一个是className，一个是class</p>
+<h3 id="移除属性"><a href="#移除属性" class="headerlink" title="移除属性"></a>移除属性</h3><ul>
+<li>element.removeAttribute(‘属性’)</li>
+</ul>
+<h2 id="H5自定义属性"><a href="#H5自定义属性" class="headerlink" title="H5自定义属性"></a>H5自定义属性</h2><p><strong>自定义属性目的：是为了保存并使用数据，有些数据可以保存到页面中而不用保存到数据库</strong></p>
+<p>自定义属性获取通过 getAttribute(“属性”) 方法</p>
+<p>但是有些自定义属性很容易引起歧义，不容易判断是元素的内置属性还是自定义属性</p>
+<p>H5新增了自定义属性</p>
+<h3 id="设置H5自定义属性"><a href="#设置H5自定义属性" class="headerlink" title="设置H5自定义属性"></a>设置H5自定义属性</h3><p>H5规定自定义属性<strong>data-</strong>开头作为属性名并且赋值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-index</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者使用JS设置自定义属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.setAttribute(<span class="string">'data-index'</span> , <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取H5自定义属性"><a href="#获取H5自定义属性" class="headerlink" title="获取H5自定义属性"></a>获取H5自定义属性</h3><ol>
+<li>兼容性获取：element.getAttribute( ‘data-index’ );</li>
+<li>H5新增 element.dataset.index 或者 element.dataset[ ‘index’ ] </li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/15/%E9%94%99%E8%AF%AF%E7%A4%BA%E8%AD%A6%EF%BC%81%EF%BC%81%EF%BC%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/15/%E9%94%99%E8%AF%AF%E7%A4%BA%E8%AD%A6%EF%BC%81%EF%BC%81%EF%BC%81/" itemprop="url">错误示警！！！</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-15T23:39:02+08:00">
+                2020-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%89%A9%E5%B1%95%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">扩展知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <hr>
+<h1 id="警告并警惕"><a href="#警告并警惕" class="headerlink" title="警告并警惕"></a>警告并警惕</h1><p>以下是曾经犯过的错，当时花了很长时间解决，让人心烦意乱，警惕不要再犯！！</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/15/%E9%94%99%E8%AF%AF%E7%A4%BA%E8%AD%A6%EF%BC%81%EF%BC%81%EF%BC%81/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/15/%E4%BB%8A%E6%97%A5%E6%97%A0%E8%AF%9D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -371,125 +696,6 @@
 <p>​    ……淦</p>
 <hr>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/14/4-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="半猫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="半猫的小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/14/4-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A02/" itemprop="url">4-操作元素2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T22:01:11+08:00">
-                2020-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
           
         
       
@@ -704,7 +910,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/07/14/4-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A01/" itemprop="url">4-操作元素1</a></h1>
+                <a class="post-title-link" href="/2020/07/14/4-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A01/" itemprop="url">4-操作元素</a></h1>
         
 
         <div class="post-meta">
@@ -777,77 +983,16 @@
 
       
         
-          
-            <hr>
+          <hr>
 <h1 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h1><h2 id="改变元素内容"><a href="#改变元素内容" class="headerlink" title="改变元素内容"></a>改变元素内容</h2><p><strong>element.innerText</strong> 从起始位置到终止位置的内容，但它去除html标签，同时空格和换行也会去掉</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    div.innerText = <span class="string">'2019-6-6'</span>  ** 改变div的内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>element.innerHTML</strong> 起始位置到终止位置的全部内容，包括html，同时保留空格和换行</p>
-<p>innerText和innerHTML的区别：</p>
-<ol>
-<li>innerText不识别html标签，读写时去除空格和换行、标签</li>
-<li>innerHTML识别html标签，读写时保留空格和换行、标签（推荐）</li>
-</ol>
-<h2 id="常用元素的属性操作"><a href="#常用元素的属性操作" class="headerlink" title="常用元素的属性操作"></a>常用元素的属性操作</h2><p>案例：点击按钮更换图片</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">'ldh'</span>&gt;</span>刘德华<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">'zxy'</span>&gt;</span>张学友<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'images/ldh.jpg'</span> <span class="attr">alt</span>=<span class="string">''</span> <span class="attr">title</span>=<span class="string">'刘德华'</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ldh = <span class="built_in">document</span>.getElementById(<span class="string">'ldg'</span>);</span><br><span class="line"><span class="keyword">var</span> zxy = <span class="built_in">document</span>.getElementById(<span class="string">'zxy'</span>);</span><br><span class="line"><span class="keyword">var</span> img = <span class="built_in">document</span>.querySelector(<span class="string">'img'</span>);</span><br><span class="line"></span><br><span class="line">zxy.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    img.src = <span class="string">'images/zxy.jpg'</span>;   ** 修改图片路径属性</span><br><span class="line">    img.title = <span class="string">'张学友'</span>;          ** 修改图片提示信息属性</span><br><span class="line">&#125;</span><br><span class="line">ldh.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    img.src = <span class="string">'images/ldh.jpg'</span>;</span><br><span class="line">    img.title = <span class="string">'刘德华'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="表单元素的属性操作"><a href="#表单元素的属性操作" class="headerlink" title="表单元素的属性操作"></a>表单元素的属性操作</h2><p>案例：仿京东显示密码——点击按钮将密码框切换为文本框，可以查看明文密码</p>
-<ol>
-<li>核心思路：点击按钮，把密码框类型改为文本框</li>
-<li>一个按钮两个状态，点击一次，切换为文本框，再点一次切换问密码框</li>
-<li>算法：利用一个flag变量，判断flag的值，如果是1就切换为文本框并设置flag为0，如果是0，切换为密码框并设置flag为1</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/close.png"</span> <span class="attr">ale</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"eye"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"pwd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">input</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">370px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">24px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> eye = <span class="built_in">document</span>.getElementById(<span class="string">'eye'</span>);</span><br><span class="line"><span class="keyword">var</span> pwd = <span class="built_in">document</span>.getElementById(<span class="string">'pwd'</span>);</span><br><span class="line"><span class="keyword">var</span> flag = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">eye.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( flag == <span class="number">0</span> )&#123;				** 判断flag的值</span><br><span class="line">   	 	pwd.type = <span class="string">'text'</span>;</span><br><span class="line">        eye.src=<span class="string">'images/open.png'</span>;   ** 更换打开眼睛图片</span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        pwd.type = <span class="string">'password'</span>;</span><br><span class="line">        eye.src=<span class="string">'images/close.png'</span>;  ** 更换闭上眼睛图片</span><br><span class="line">        flag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="样式属性操作"><a href="#样式属性操作" class="headerlink" title="样式属性操作"></a>样式属性操作</h2><h3 id="element-style-行内样式操作"><a href="#element-style-行内样式操作" class="headerlink" title="element.style  行内样式操作"></a>element.style  行内样式操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>);</span><br><span class="line"></span><br><span class="line">test.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">'purple'</span>;</span><br><span class="line">    <span class="keyword">this</span>.style.color = <span class="string">'#fff'</span>;</span><br><span class="line">    <span class="keyword">this</span>.style.fontSize = <span class="string">'25px'</span>;</span><br><span class="line">    <span class="keyword">this</span>.style.marginTop = <span class="string">'100px'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>注意：</strong></p>
-<ol>
-<li>JS里的样式采取驼峰命名法，比如 fontSize、backgroundColor</li>
-<li>JS修改style样式操作，产生的是行内样式，CSS权重比较高</li>
-</ol>
-<p>案例：仿淘宝关闭二维码</p>
-<ol>
-<li>核心思路：利用样式的显示和隐藏，display: none隐藏元素，display: block显示元素</li>
-<li>点击按钮，就让这个二维码盒子隐藏起来</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    淘宝二维码</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/tao.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"close-btn"</span>&gt;</span>×<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.close-btn</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">left</span>: -<span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Arial, Helvetica, sans-serif;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'.close-btn'</span>);</span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span><br><span class="line"></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    	box.style.display = <span class="string">'none'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="element-className-类名样式操作"><a href="#element-className-类名样式操作" class="headerlink" title="element.className  类名样式操作"></a>element.className  类名样式操作</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    文本</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.change</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: purple;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">25px</span>;</span><br><span class="line">    margin=top: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>);</span><br><span class="line"></span><br><span class="line">test.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.className = <span class="string">'change'</span>;</span><br><span class="line">    <span class="comment">// 将当前元素的类名改为change，即预先在css文件中定义的样式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong></p>
-<ol>
-<li>如果样式修改较多，可以采取操作类名方式更改元素样式</li>
-<li>class因为是保留字，因此使用className来操作元素类名属性</li>
-<li>className会直接更改元素的类名，覆盖原先的类名</li>
-</ol>
-<p>如果想保留原先的类名，可以赋值两个类名，中间用空格隔开</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">this</span>.className = <span class="string">'first change'</span>;</span><br><span class="line"><span class="comment">// first是原先的类名，覆盖之后则为多类名选择器</span></span><br></pre></td></tr></table></figure>
-
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/14/4-%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A01/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1604,158 +1749,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/15-CSS%E5%88%9D%E5%A7%8B%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="半猫">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="半猫的小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/11/15-CSS%E5%88%9D%E5%A7%8B%E5%8C%96/" itemprop="url">15-CSS初始化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-11T20:07:29+08:00">
-                2020-07-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h1 id="CSS初始化"><a href="#CSS初始化" class="headerlink" title="CSS初始化"></a>CSS初始化</h1><p>不同浏览器对有些标签的默认值不同，为了消除不同浏览器对HTML文本呈现的差异，照顾兼容性，需要对CSS初始化</p>
-<p>重设浏览器样式（CSS reset）</p>
-<p>每个网页都必须首先进行CSS初始化</p>
-<p><strong>Unicode编码字体</strong>：把中文字体的名称用相应的Unicode编码代替，这样可以有效避免浏览器解释CSS代码时候出现乱码问题</p>
-<p>比如：</p>
-<ul>
-<li>黑体   \9ED1\4F53</li>
-<li>宋体   \5B8B\4F53</li>
-<li>微软雅黑   \5FAE\8F6F\96C5\9ED1</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1806,7 +1799,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1828,7 +1821,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
