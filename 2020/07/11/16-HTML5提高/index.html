@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML5," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML5提高HTML5的新增特性主要针对以前的不足，增加了一些新的标签、新的表单和新的表单属性 这些新特性都有兼容问题，基本IE9+以上版本才支持，如果不考虑兼容性问题，可以大量使用这些特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="16-HTML5提高1">
+<meta property="og:url" content="http://yoursite.com/2020/07/11/16-HTML5%E6%8F%90%E9%AB%98/index.html">
+<meta property="og:site_name" content="半猫的小站">
+<meta property="og:description" content="HTML5提高HTML5的新增特性主要针对以前的不足，增加了一些新的标签、新的表单和新的表单属性 这些新特性都有兼容问题，基本IE9+以上版本才支持，如果不考虑兼容性问题，可以大量使用这些特性">
+<meta property="article:published_time" content="2020-07-11T13:14:33.000Z">
+<meta property="article:modified_time" content="2020-07-23T02:53:56.826Z">
+<meta property="article:author" content="半猫">
+<meta property="article:tag" content="HTML5">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/11/16-HTML5提高/"/>
+
+
+
+
+
+  <title>16-HTML5提高1 | 半猫的小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">半猫的小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">呜啦啦啦啦啦啦啊</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap#.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/16-HTML5%E6%8F%90%E9%AB%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">16-HTML5提高1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-11T21:14:33+08:00">
+                2020-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h1 id="HTML5提高"><a href="#HTML5提高" class="headerlink" title="HTML5提高"></a>HTML5提高</h1><p>HTML5的新增特性主要针对以前的不足，增加了一些<strong>新的标签、新的表单和新的表单属性</strong></p>
+<p>这些新特性都有兼容问题，基本IE9+以上版本才支持，如果不考虑兼容性问题，可以大量使用这些特性</p>
+<a id="more"></a>
+
+<h2 id="HTML5新增的语义化标签"><a href="#HTML5新增的语义化标签" class="headerlink" title="HTML5新增的语义化标签"></a>HTML5新增的语义化标签</h2><ul>
+<li>&lt;header&gt;：头部标签</li>
+<li>&lt;nav&gt;：导航标签</li>
+<li>&lt;article&gt;：内容标签</li>
+<li>&lt;section&gt;：定义文档某个区域</li>
+<li>&lt;aside&gt;：侧边栏标签</li>
+<li>&lt;footer&gt;：尾部标签</li>
+</ul>
+<p><strong>注意：</strong></p>
+<ol>
+<li>这种语义化标准主要是针对<strong>搜索引擎</strong></li>
+<li>这些新标签页面中可以多次使用</li>
+<li>在IE9中，需要把这些元素转换为<strong>块级元素</strong></li>
+<li>移动端更常用这些标签</li>
+</ol>
+<h2 id="HTML5新增的多媒体标签"><a href="#HTML5新增的多媒体标签" class="headerlink" title="HTML5新增的多媒体标签"></a>HTML5新增的多媒体标签</h2><p>使用它们可以很方便的在页面中嵌入音频和视频，而不用使用flash和其他浏览器插件</p>
+<ol>
+<li>音频：&lt;audio&gt;</li>
+<li>视频：&lt;video&gt;</li>
+</ol>
+<h3 id="视频-lt-video-gt"><a href="#视频-lt-video-gt" class="headerlink" title="视频&lt;video&gt;"></a>视频&lt;video&gt;</h3><p>当前&lt;video&gt;元素支持三种视频格式，尽量使用mp4格式</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>MP4</th>
+<th>WebM</th>
+<th>Ogg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody></table>
+<h4 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"文件地址"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="常见属性"><a href="#常见属性" class="headerlink" title="常见属性"></a>常见属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>autoplay</td>
+<td>视频就绪自动播放<br>Chrome需要添加muted来解决自动播放问题</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>controls</td>
+<td>向用户显示播放控件</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素</td>
+<td>设置播放器宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>像素</td>
+<td>设置播放器高度</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>loop</td>
+<td>播放完是否继续播放该视频，循环播放</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>auto（预先加载视频）<br>none（不应加载视频）</td>
+<td>规定是否预加载视频<br>如果有了autoplay 就忽略该属性</td>
+</tr>
+<tr>
+<td>src</td>
+<td>URL</td>
+<td>视频URL地址</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>ImgURL</td>
+<td>加载等待的画面图片</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>muted</td>
+<td>静音播放</td>
+</tr>
+</tbody></table>
+<h3 id="音频-lt-audio-gt"><a href="#音频-lt-audio-gt" class="headerlink" title="音频&lt;audio&gt;"></a>音频&lt;audio&gt;</h3><p>当前&lt;audio&gt;元素支持三种音频格式：</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>MP3</th>
+<th>Wav</th>
+<th>Ogg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+</tbody></table>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"文件地址"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="常见属性-1"><a href="#常见属性-1" class="headerlink" title="常见属性"></a>常见属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>autoplay</td>
+<td>如果出现该属性，则音频在就绪后马上播放</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>controls</td>
+<td>向用户显示控件</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>loop</td>
+<td>每当音频结束时重新开始播放</td>
+</tr>
+<tr>
+<td>src</td>
+<td>URL</td>
+<td>要播放的URL</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>谷歌浏览器把音频和视频自动播放禁止了</strong></li>
+</ul>
+<h2 id="HTML5新增的input表单"><a href="#HTML5新增的input表单" class="headerlink" title="HTML5新增的input表单"></a>HTML5新增的input表单</h2><p>在input标签中，type属性新增了许多表单类型</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type=”email”</td>
+<td>限制用户输入必须为Email类型</td>
+</tr>
+<tr>
+<td>type=”url”</td>
+<td>限制用户输入必须为URL类型</td>
+</tr>
+<tr>
+<td>type=”date”</td>
+<td>限制用户输入必须为日期类型</td>
+</tr>
+<tr>
+<td>type=”time”</td>
+<td>限制用户输入必须为时间类型</td>
+</tr>
+<tr>
+<td>type=”month”</td>
+<td>限制用户输入必须为月类型</td>
+</tr>
+<tr>
+<td>type=”week”</td>
+<td>限制用户输入必须为周类型</td>
+</tr>
+<tr>
+<td>type=”number”</td>
+<td>限制用户输入必须为数字类型</td>
+</tr>
+<tr>
+<td>type=”tel”</td>
+<td>手机号码</td>
+</tr>
+<tr>
+<td>type=”search”</td>
+<td>搜索框</td>
+</tr>
+<tr>
+<td>type=”color”</td>
+<td>生成一个颜色选择表单</td>
+</tr>
+</tbody></table>
+<h2 id="HTML5新增的表单属性"><a href="#HTML5新增的表单属性" class="headerlink" title="HTML5新增的表单属性"></a>HTML5新增的表单属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>required</td>
+<td>required</td>
+<td>表单拥有该属性表示其内容不能为空，必填</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>提示文本</td>
+<td>表单的提示信息，存在默认值将不显示</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td>autofocus</td>
+<td>自动聚焦属性，页面加载完成自动聚焦到指定表单</td>
+</tr>
+<tr>
+<td>autocomplete</td>
+<td>off / on</td>
+<td>当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选择<br>默认已经打开，如 autocomplete=”auto”<br>关闭autocomplete=”off”<br>需要放在表单内，同时加上name属性，同时成功提交</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>multiple</td>
+<td>可以多选文件提交，通常和文件域搭配 type=”file”</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/11/15-CSS%E5%88%9D%E5%A7%8B%E5%8C%96/" rel="next" title="15-CSS初始化">
+                <i class="fa fa-chevron-left"></i> 15-CSS初始化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/12/1-Logo%E7%9A%84SEO%E4%BC%98%E5%8C%96/" rel="prev" title="1-Logo的SEO优化">
+                1-Logo的SEO优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">半猫</p>
+              <p class="site-description motion-element" itemprop="description">一个小小的学习屋</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5提高"><span class="nav-number">1.</span> <span class="nav-text">HTML5提高</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的语义化标签"><span class="nav-number">1.1.</span> <span class="nav-text">HTML5新增的语义化标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的多媒体标签"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5新增的多媒体标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视频-lt-video-gt"><span class="nav-number">1.2.1.</span> <span class="nav-text">视频&lt;video&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法："><span class="nav-number">1.2.1.1.</span> <span class="nav-text">语法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见属性"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">常见属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音频-lt-audio-gt"><span class="nav-number">1.2.2.</span> <span class="nav-text">音频&lt;audio&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见属性-1"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">常见属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的input表单"><span class="nav-number">1.3.</span> <span class="nav-text">HTML5新增的input表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的表单属性"><span class="nav-number">1.4.</span> <span class="nav-text">HTML5新增的表单属性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">©半猫的个人网站</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
