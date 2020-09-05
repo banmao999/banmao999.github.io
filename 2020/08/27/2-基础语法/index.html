@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="VUE," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基础语法插值操作Mustache语法（双大括号）在mustache语法中，不仅可以直接写变量，也可以写简单的表达式 123&lt;div&gt;    &amp;#123; &amp;#123; message &amp;#125; &amp;#125;&lt;&#x2F;div&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2-基础语法">
+<meta property="og:url" content="http://yoursite.com/2020/08/27/2-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="半猫的小站">
+<meta property="og:description" content="基础语法插值操作Mustache语法（双大括号）在mustache语法中，不仅可以直接写变量，也可以写简单的表达式 123&lt;div&gt;    &amp;#123; &amp;#123; message &amp;#125; &amp;#125;&lt;&#x2F;div&gt;">
+<meta property="article:published_time" content="2020-08-27T12:37:24.000Z">
+<meta property="article:modified_time" content="2020-09-05T05:44:00.444Z">
+<meta property="article:author" content="半猫">
+<meta property="article:tag" content="VUE">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/27/2-基础语法/"/>
+
+
+
+
+
+  <title>2-基础语法 | 半猫的小站</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">半猫的小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">呜啦啦啦啦啦啦啊</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap#.xml%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/27/2-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半猫的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2-基础语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-27T20:37:24+08:00">
+                2020-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="插值操作"><a href="#插值操作" class="headerlink" title="插值操作"></a>插值操作</h2><h3 id="Mustache语法（双大括号）"><a href="#Mustache语法（双大括号）" class="headerlink" title="Mustache语法（双大括号）"></a>Mustache语法（双大括号）</h3><p>在mustache语法中，不仅可以直接写变量，也可以写简单的表达式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123; &#123; message &#125; &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h3><p>在某些情况下，可能不希望界面随意的跟随改变</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-once</span>&gt;</span></span><br><span class="line">        &#123;&#123; message &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该指令后面不需要跟任何表达式(比如之前的v-for后面是由跟表达式的)</li>
+<li>该指令表示元素和组件(组件后面才会学习)只渲染一次，不会随着数据的改变而改变</li>
+</ul>
+<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><p>某些情况下，我们从服务器请求到的数据本身就是一个HTML代码</p>
+<p>如果我们直接通过<code></code>来输出，会将HTML代码也一起输出。</p>
+<p>但是我们可能希望的是按照HTML格式进行解析，并且显示对应的内容。</p>
+<p>如果我们希望解析出HTML展示，可以使用v-html指令</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-html</span>=<span class="string">“url</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- url: '&lt;a href="http://www.baidu.com"&gt;百度&lt;/a&gt;' --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该指令后面往往会跟上一个string类型，会将string的html解析出来并且进行渲染</li>
+</ul>
+<h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><p>v-text作用和Mustache比较相似：都是用于将数据显示在界面中</p>
+<p>v-text通常情况下，接受一个string类型</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-text</span>=<span class="string">"message"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一般不使用，因为不够灵活</li>
+</ul>
+<h3 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h3><p>用于跳过这个元素和它子元素的编译过程，用于显示原本的Mustache语法</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-pre</span>&gt;</span> &#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 将显示 &#123;&#123;message&#125;&#125; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="v-cloak-cloak-斗篷"><a href="#v-cloak-cloak-斗篷" class="headerlink" title="v-cloak (cloak: 斗篷)"></a>v-cloak (cloak: 斗篷)</h3><p>在某些情况下，浏览器可能会直接显然出未编译的Mustache标签。</p>
+<p>比如：延迟、循环过多导致等待、加载卡住</p>
+<p>为了隐藏不美观的mustache，可以使用v-cloak</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">v-cloak</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span> &#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 选择含有v-cloak属性的标签，并隐藏</span><br><span class="line"><span class="selector-attr">[v-cloak]</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在VUE解析之前，div中有一个属性 v-cloak</p>
+<p>在VUE解析之后，div中没有属性v-cloak</p>
+<h2 id="绑定属性"><a href="#绑定属性" class="headerlink" title="绑定属性"></a>绑定属性</h2><h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><p>除了内容需要动态决定外，某些属性也希望动态绑定（比如，a元素的href属性，img元素的src属性）</p>
+<p>这个时候，可以使用v-bind指令：</p>
+<ul>
+<li>作用：动态绑定属性</li>
+<li>缩写：:</li>
+<li>预期：any (with argument) | Object (without argument)</li>
+<li>参数：attrOrProp(optional)</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 不可以在标签中使用mustache语法 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">"link"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"link"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>v-bind有一个对应的语法糖，也就是简写方式</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">:href</span>=<span class="string">"link"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"link"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="v-bind动态绑定class"><a href="#v-bind动态绑定class" class="headerlink" title="v-bind动态绑定class"></a>v-bind动态绑定class</h4><p>很多时候，我们希望动态的来切换class，比如：</p>
+<ul>
+<li><p>当数据为某个状态时，字体显示红色。</p>
+</li>
+<li><p>当数据另一个状态时，字体显示黑色。</p>
+</li>
+</ul>
+<p>绑定class有两种方式：</p>
+<ul>
+<li>对象语法</li>
+<li>数组语法</li>
+</ul>
+<h5 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h5><p>对象语法的含义是：class后面跟的是一个对象。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123;类名1: boolean, 类名2: boolean&#125;"</span>&gt;</span></span><br><span class="line">        &#123;&#123; message &#125;&#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>用法一：直接通过{}绑定一个类</p>
+<p>&lt;h2 :class=”{‘active’: isActive}”&gt;Hello World</p>
+<p>用法二：也可以通过判断，传入多个值</p>
+<p>&lt;h2 :class=”{‘active’: isActive, ‘line’: isLine}”&gt;Hello World</p>
+<p>用法三：和普通的类同时存在，并不冲突<br>注：如果isActive和isLine都为true，那么会有title/active/line三个类</p>
+<p>&lt;h2 class=”title” :class=”{‘active’: isActive, ‘line’: isLine}”&gt;Hello World</p>
+<p>用法四：如果过于复杂，可以放在一个methods或者computed中<br>注：classes是一个计算属性</p>
+<p>&lt;h2 class=”title” :class=”classes”&gt;Hello World</p>
+<p>实例: </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123;active: isActive, line: isLine&#125;"</span>&gt;</span></span><br><span class="line">        &#123;&#123; message &#125;&#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">'#app'</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            message: <span class="string">'你好'</span>,</span></span><br><span class="line"><span class="actionscript">            isActive: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">            isLine: <span class="literal">true</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="数组语法"><a href="#数组语法" class="headerlink" title="数组语法"></a>数组语法</h5><p>数组语法的含义是：class后面跟的是一个数组。</p>
+<p>不常用</p>
+<p>用法一：直接通过{}绑定一个类</p>
+<p>&lt;h2 :class=”[‘active’]”&gt;Hello World</p>
+<p>用法二：也可以传入多个值</p>
+<p>&lt;h2 :class=“[‘active’, ‘line’]”&gt;Hello World</p>
+<p>用法三：和普通的类同时存在，并不冲突<br>注：会有title/active/line三个类</p>
+<p>&lt;h2 class=”title” :class=“[‘active’, ‘line’]”&gt;Hello World</p>
+<p>用法四：如果过于复杂，可以放在一个methods或者computed中<br>注：classes是一个计算属性</p>
+<p>&lt;h2 class=”title” :class=”classes”&gt;Hello World</p>
+<h4 id="v-bind绑定style"><a href="#v-bind绑定style" class="headerlink" title="v-bind绑定style"></a>v-bind绑定style</h4><p>可以利用 v-bind: style 来绑定一些CSS内联样式。</p>
+<p>在写CSS属性名的时候，比如font-size</p>
+<ul>
+<li><p>可以使用驼峰式 (camelCase) fontSize </p>
+</li>
+<li><p>或短横线分隔 (kebab-case，记得用单引号括起来) ‘font-size’</p>
+</li>
+</ul>
+<p>绑定style有两种方式：</p>
+<ul>
+<li>对象语法</li>
+<li>数组语法</li>
+</ul>
+<h5 id="对象语法-1"><a href="#对象语法-1" class="headerlink" title="对象语法"></a>对象语法</h5><p>:style=”{color: currentColor, fontSize: fontSize + ‘px’}”</p>
+<ul>
+<li>style后面跟的是一个对象类型<ul>
+<li>对象的key是CSS属性名称</li>
+<li>对象的value是具体赋的值，值可以来自于data中的属性</li>
+<li>value不加单引号则作为变量解析</li>
+</ul>
+</li>
+</ul>
+<h5 id="数组语法-1"><a href="#数组语法-1" class="headerlink" title="数组语法"></a>数组语法</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"[baseStyles, overridingStyles]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            baseStyles: &#123;backgroundColor: <span class="string">'red'</span>&#125;,</span></span><br><span class="line"><span class="actionscript">            overridingStyle: &#123;fontSize: <span class="string">'40px'</span>&#125;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>style后面跟的是一个数组类型</li>
+<li>多个值以” , “分割即可</li>
+</ul>
+<h2 id="计算属性——computed"><a href="#计算属性——computed" class="headerlink" title="计算属性——computed"></a>计算属性——computed</h2><p>在某些情况，可能需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">        &#123;&#123; fullname &#125;&#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">'#app'</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            firstName: <span class="string">'张'</span>,</span></span><br><span class="line"><span class="actionscript">            lastName: <span class="string">'三'</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">// 计算属性</span></span></span><br><span class="line">        computed: &#123;</span><br><span class="line"><span class="actionscript">            fullName: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> <span class="keyword">this</span>.firstName+<span class="string">' '</span>+<span class="keyword">this</span>.lastName</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="计算属性的setter和getter"><a href="#计算属性的setter和getter" class="headerlink" title="计算属性的setter和getter"></a>计算属性的setter和getter</h3><p>每个计算属性都包含一个getter和一个setter</p>
+<p>在上面的例子中，只是使用getter来读取。</p>
+<p>在某些情况下，也可以提供一个setter方法（不常用）。</p>
+<p>计算属性一般没有set方法，是一个只读属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">        &#123;&#123; fullname &#125;&#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el: <span class="string">'#app'</span>,</span></span><br><span class="line">        data: &#123;</span><br><span class="line"><span class="actionscript">            firstName: <span class="string">'张'</span>,</span></span><br><span class="line"><span class="actionscript">            lastName: <span class="string">'三'</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">// 计算属性</span></span></span><br><span class="line">        computed: &#123;</span><br><span class="line">            fullName: &#123;</span><br><span class="line"><span class="actionscript">                <span class="keyword">set</span>: <span class="function"><span class="keyword">function</span><span class="params">(newValue)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">const</span> names = newValue.split(<span class="string">' '</span>);</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.firstName = names[<span class="number">0</span>];</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.lastName = names[<span class="number">1</span>];</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="actionscript">                <span class="keyword">get</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">return</span> <span class="keyword">this</span>.firstName +<span class="string">' '</span>+ lastName</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="计算属性的缓存"><a href="#计算属性的缓存" class="headerlink" title="计算属性的缓存"></a>计算属性的缓存</h3><p>计算属性会进行缓存，<strong>如果多次使用时，计算属性只会调用一次。</strong></p>
+<p>而methods属性每次调用都会执行一次。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VUE/" rel="tag"># VUE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/25/1-%E4%BA%86%E8%A7%A3VUE/" rel="next" title="1-了解VUE">
+                <i class="fa fa-chevron-left"></i> 1-了解VUE
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/28/3-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%952/" rel="prev" title="3-基础语法2">
+                3-基础语法2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">半猫</p>
+              <p class="site-description motion-element" itemprop="description">一个小小的学习屋</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础语法"><span class="nav-number">1.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值操作"><span class="nav-number">1.1.</span> <span class="nav-text">插值操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mustache语法（双大括号）"><span class="nav-number">1.1.1.</span> <span class="nav-text">Mustache语法（双大括号）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-once"><span class="nav-number">1.1.2.</span> <span class="nav-text">v-once</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-html"><span class="nav-number">1.1.3.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-text"><span class="nav-number">1.1.4.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-pre"><span class="nav-number">1.1.5.</span> <span class="nav-text">v-pre</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-cloak-cloak-斗篷"><span class="nav-number">1.1.6.</span> <span class="nav-text">v-cloak (cloak: 斗篷)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定属性"><span class="nav-number">1.2.</span> <span class="nav-text">绑定属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind"><span class="nav-number">1.2.1.</span> <span class="nav-text">v-bind</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-bind动态绑定class"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">v-bind动态绑定class</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象语法"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">对象语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组语法"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">数组语法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-bind绑定style"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">v-bind绑定style</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象语法-1"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">对象语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组语法-1"><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">数组语法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算属性——computed"><span class="nav-number">1.3.</span> <span class="nav-text">计算属性——computed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性的setter和getter"><span class="nav-number">1.3.1.</span> <span class="nav-text">计算属性的setter和getter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性的缓存"><span class="nav-number">1.3.2.</span> <span class="nav-text">计算属性的缓存</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">©半猫的个人网站</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
